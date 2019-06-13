@@ -16,9 +16,9 @@ public enum GestorVeiculos {
 
         Automovel artur = new Automovel(3,4, "AA-11-55");
 
-        reboques.add(new ReboqueAquaticos(1, "AT-43-11"));
-        reboques.add(new ReboqueTerrestres(2, "AS-41-34"));
-        reboques.add(new ReboqueTerrestres(1, "ZX-91-00", artur));
+        reboques.add(new Reboque<VeiculoAquatico>(1, "AT-43-11"));
+        reboques.add(new Reboque<VeiculoTerrestre>(2, "AS-41-34"));
+        reboques.add(new Reboque<VeiculoTerrestre>(1, "ZX-91-00", artur));
 
         automoveis.add(new Automovel(1,5, "FF-11-44"));
         automoveis.add(new Automovel(5,5, "FF-11-55"));

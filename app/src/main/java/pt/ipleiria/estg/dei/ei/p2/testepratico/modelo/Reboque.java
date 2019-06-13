@@ -1,19 +1,19 @@
 package pt.ipleiria.estg.dei.ei.p2.testepratico.modelo;
 
-public abstract class Reboque extends VeiculoTerrestre {
-    private Veiculo veiculo;
+public class Reboque<T extends Veiculo> extends VeiculoTerrestre {
+    private T veiculo;
 
-    protected Reboque(long numeroPassageiros, String matricula) {
+    public Reboque(long numeroPassageiros, String matricula) {
         super(numeroPassageiros, 2, matricula);
     }
 
-    protected Reboque(long numeroPassageiros, String matricula, Veiculo veiculo) {
+    public Reboque(long numeroPassageiros, String matricula, T veiculo) {
         super(numeroPassageiros, 2, matricula);
 
         associar(veiculo);
     }
 
-    protected void associar(Veiculo veiculo)
+    public void associar(T veiculo)
     {
         this.veiculo = veiculo;
     }
@@ -23,7 +23,7 @@ public abstract class Reboque extends VeiculoTerrestre {
         this.veiculo = null;
     }
 
-    final public Veiculo getVeiculo() {
+    final public T getVeiculo() {
         return veiculo;
     }
 
